@@ -12,15 +12,17 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToMany;
+import lombok.Data;
 
 @Entity
+@Data
 public class Characters {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     
     
-    @Column(name = "id")
+    @Column(name = "id", nullable=false)
     private Integer id;
     
     @Column(name = "status", length=8)
@@ -56,5 +58,5 @@ public class Characters {
         joinColumns = @JoinColumn(name = "characters_id"),
         inverseJoinColumns = @JoinColumn(name = "episode_id")
     )
-    private List<Episode> character = new ArrayList<>();
+    private List<Episode> episodes = new ArrayList<>();
 }

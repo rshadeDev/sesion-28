@@ -14,7 +14,7 @@ public class Episode {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
-    @Column(name = "id")
+    @Column(name = "id", nullable=false)
     private Integer id;
 
     @Column(name = "air_date", length=45)

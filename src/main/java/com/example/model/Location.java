@@ -17,7 +17,7 @@ public class Location {
     @Column(name = "dimension")
     private Integer dimension;
 
-    @Column(name = "id")
+    @Column(name = "id", nullable=false)
     private Integer id;
 
     @Column(name = "created", length=45)
