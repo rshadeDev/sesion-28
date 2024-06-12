@@ -1,3 +1,5 @@
 package com.example.model;
 
-enum Role {}
+enum Role {
+    ADMIN, USER
+}

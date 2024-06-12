@@ -2,6 +2,8 @@ package com.example.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -13,7 +15,7 @@ public class User {
     
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-    
+
     @Column(name = "id")
     private Integer id;
 
@@ -22,4 +24,8 @@ public class User {
 
     @Column(name = "password", length=255)
     private String password;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "role", length=45)
+    private Role role;
 }
